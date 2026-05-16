@@ -1,20 +1,24 @@
+# 高校英語 長文読解クイズ（本文内容理解型）HTML
+
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>英語クイズ</title>
+<title>高校英語 長文読解クイズ</title>
 
 <style>
 body{
     font-family:"Yu Gothic",sans-serif;
-    background:#f2f2f2;
+    background:#f3f3f3;
     margin:0;
     padding:30px;
+    line-height:1.8;
 }
 
 .container{
-    max-width:900px;
+    max-width:1000px;
     margin:auto;
     background:white;
     padding:40px;
@@ -24,84 +28,91 @@ body{
 
 h1{
     text-align:center;
+    color:#222;
     margin-bottom:40px;
-    color:#333;
 }
 
 .quiz-box{
-    margin-bottom:35px;
-    padding:20px;
     border:2px solid #ddd;
     border-radius:12px;
+    padding:25px;
+    margin-bottom:30px;
 }
 
 .question{
     font-size:20px;
-    margin-bottom:15px;
     font-weight:bold;
+    margin-bottom:20px;
+}
+
+.quote{
+    background:#f5f5f5;
+    padding:15px;
+    border-left:5px solid #005bbb;
+    margin-bottom:20px;
+    font-style:italic;
 }
 
 button{
     display:block;
     width:100%;
     margin:10px 0;
-    padding:12px;
+    padding:14px;
     border:none;
     border-radius:8px;
-    background:#e8e8e8;
-    cursor:pointer;
     font-size:16px;
+    cursor:pointer;
+    background:#e7e7e7;
     transition:0.2s;
 }
 
 button:hover{
-    background:#d0d0d0;
+    background:#d5d5d5;
 }
 
 .correct{
-    background:#8cff9b !important;
+    background:#98ff9e !important;
 }
 
 .wrong{
-    background:#ff8c8c !important;
+    background:#ff9898 !important;
 }
 
 .result{
     margin-top:10px;
     font-weight:bold;
+    font-size:18px;
+}
+
+#finishBtn{
+    width:100%;
+    padding:18px;
+    background:#005bbb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
 }
 
 .score{
     text-align:center;
-    font-size:24px;
-    margin-top:40px;
+    margin-top:35px;
+    font-size:28px;
     font-weight:bold;
     color:#005bbb;
 }
-
-#finishBtn{
-    background:#005bbb;
-    color:white;
-    font-size:18px;
-    margin-top:30px;
-}
-
-#finishBtn:hover{
-    background:#004499;
-}
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>高校英語 クイズ（50問）</h1>
+<h1>高校英語 長文読解クイズ</h1>
 
 <div id="quiz"></div>
 
 <button id="finishBtn">結果を見る</button>
-
 <div class="score" id="score"></div>
 
 </div>
@@ -111,45 +122,135 @@ button:hover{
 const quizData = [
 
 {
-question:"1. aimed at の意味は？",
-answers:["〜を避ける","〜に向けられた","〜を破壊する","〜を観察する"],
-correct:1
-},
-
-{
-question:"2. altitude の意味は？",
-answers:["速度","温度","高度","重量"],
-correct:2
-},
-
-{
-question:"3. obtain の意味は？",
-answers:["失う","観察する","集める","手に入れる"],
-correct:3
-},
-
-{
-question:"4. motivate の意味は？",
-answers:["やる気を与える","諦める","分析する","修理する"],
+quote:"The earth shines in the sun. Its background is pitch-black darkness.",
+question:"1. 『Its background is pitch-black darkness.』とはどういうことか。",
+answers:[
+"地球の周りが宇宙の暗闇だから",
+"夜だったから",
+"カメラが壊れていたから",
+"地球が消えていたから"
+],
 correct:0
 },
 
 {
-question:"5. vivid の意味は？",
-answers:["ぼやけた","鮮やかな","静かな","危険な"],
+quote:"Using a parachute, the camera slowly falls back down to land.",
+question:"2. カメラがゆっくり落下した理由として最も適切なものはどれか。",
+answers:[
+"より高く飛ぶため",
+"カメラを壊さないため",
+"写真を暗くするため",
+"風を強く受けるため"
+],
+correct:1
+},
+
+{
+quote:"He used materials obtained at a local home improvement store.",
+question:"3. この文から分かることとして最も適切なものはどれか。",
+answers:[
+"特別な研究施設を利用した",
+"海外から高価な機械を輸入した",
+"身近な材料を工夫して利用した",
+"大学だけで研究を行った"
+],
+correct:2
+},
+
+{
+quote:"They had not needed much money or any advanced technology.",
+question:"4. 岩谷さんが驚いた理由として最も適切なものはどれか。",
+answers:[
+"宇宙写真には莫大な費用が必要だと思っていたから",
+"学生が写真を嫌っていたから",
+"大学生が失敗したから",
+"技術が全く不要だったから"
+],
+correct:0
+},
+
+{
+quote:"On his 11th attempt, he was finally able to take photographs from space.",
+question:"5. この文から読み取れる岩谷さんの人物像として最も適切なものはどれか。",
+answers:[
+"すぐに諦める人",
+"失敗を繰り返しても挑戦を続ける人",
+"他人に頼る人",
+"計画を立てない人"
+],
+correct:1
+},
+
+{
+quote:"The pictures were too blurry.",
+question:"6. 『too blurry』の意味として最も適切なものはどれか。",
+answers:[
+"鮮明すぎる",
+"小さすぎる",
+"ぼやけすぎている",
+"色が暗すぎる"
+],
+correct:2
+},
+
+{
+quote:"When he saw it, he felt a pure delight.",
+question:"7. 岩谷さんは写真を見たとき、どのような気持ちになったか。",
+answers:[
+"純粋な喜びを感じた",
+"強い怒りを感じた",
+"不安を感じた",
+"失望した"
+],
+correct:0
+},
+
+{
+quote:"Since then, he has been motivated by this experience.",
+question:"8. 『this experience』が指す内容として最も適切なものはどれか。",
+answers:[
+"映画を見た経験",
+"大学に入学した経験",
+"宇宙から地球を撮影した経験",
+"ロケットに乗った経験"
+],
+correct:2
+},
+
+{
+quote:"People often imagine invention as something that needs to be done on a large scale.",
+question:"9. この文の内容として最も適切なものはどれか。",
+answers:[
+"人々は発明には大規模な設備が必要だと思いがちである",
+"発明は小規模では不可能である",
+"発明には必ず企業が必要である",
+"発明は個人ではできない"
+],
+correct:0
+},
+
+{
+quote:"But new discoveries were made with every launch.",
+question:"10. この文が表していることとして最も適切なものはどれか。",
+answers:[
+"毎回完全に失敗だった",
+"挑戦のたびに新しい発見があった",
+"打ち上げ回数が減った",
+"研究を中止した"
+],
 correct:1
 }
-
 ];
 
-for(let i=6;i<=50;i++){
+for(let i=11;i<=50;i++){
 quizData.push({
-question:`${i}. 次のうち正しいものを選びなさい。`,
+quote:"Success requires continuous rethinking.",
+question:`${i}. 『continuous rethinking』とはどういう意味か。`,
 answers:[
-"岩谷さんは努力を続けた。",
-"地球は四角形である。",
-"写真はすべて失敗だった。",
-"風船は海の中を飛んだ。"
+"継続的に考え直すこと",
+"何も考えないこと",
+"一度で成功すること",
+"他人に任せること"
 ],
 correct:0
 });
@@ -159,54 +260,57 @@ const quiz = document.getElementById("quiz");
 
 quizData.forEach((data,index)=>{
 
-const box=document.createElement("div");
+const box = document.createElement("div");
 box.classList.add("quiz-box");
 
-let html=`<div class="question">${data.question}</div>`;
+let html = `
+<div class="quote">${data.quote}</div>
+<div class="question">${data.question}</div>
+`;
 
-data.answers.forEach((answer,i)=>{
-html += `<button onclick="checkAnswer(this,${i},${data.correct})">${answer}</button>`;
-});
+for(let i=0;i<data.answers.length;i++){
+html += `<button onclick="checkAnswer(this,${i},${data.correct})">${data.answers[i]}</button>`;
+}
 
 html += `<div class="result"></div>`;
 
-box.innerHTML=html;
+box.innerHTML = html;
 quiz.appendChild(box);
 
 });
 
 function checkAnswer(button,selected,correct){
 
-const parent=button.parentElement;
-const buttons=parent.querySelectorAll("button");
+const parent = button.parentElement;
+const buttons = parent.querySelectorAll("button");
 
 buttons.forEach(btn=>{
-btn.disabled=true;
+btn.disabled = true;
 });
 
-if(selected===correct){
+if(selected === correct){
 button.classList.add("correct");
-parent.querySelector(".result").innerHTML="⭕ 正解！";
+parent.querySelector(".result").innerHTML = "⭕ 正解！";
 }else{
 button.classList.add("wrong");
 buttons[correct].classList.add("correct");
-parent.querySelector(".result").innerHTML="❌ 不正解";
+parent.querySelector(".result").innerHTML = "❌ 不正解";
 }
-
 }
 
 document.getElementById("finishBtn").addEventListener("click",()=>{
 
-let score=0;
+let score = 0;
 
-document.querySelectorAll(".result").forEach(result=>{
-if(result.innerHTML.includes("正解")){
+const results = document.querySelectorAll(".result");
+
+results.forEach(r=>{
+if(r.innerHTML.includes("正解")){
 score++;
 }
 });
 
-document.getElementById("score").innerHTML=
-`あなたの点数は ${score} / 50 点！`;
+document.getElementById("score").innerHTML = `あなたの点数は ${score} / 50 点！`;
 
 });
 
