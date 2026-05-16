@@ -1,6 +1,3 @@
-# 高校英語 長文読解クイズ（本文内容理解型）HTML
-
-```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -242,18 +239,91 @@ correct:1
 }
 ];
 
-for(let i=11;i<=50;i++){
+quizData.push(
+{
+quote:"He collected data and made improvements.",
+question:"11. この文から分かることとして最も適切なものはどれか。",
+answers:["彼は失敗後に工夫を重ねた","彼は研究を諦めた","彼はデータを捨てた","彼は一度も改善しなかった"],
+correct:0
+},
+{
+quote:"People around him laughed at his idea.",
+question:"12. この文から読み取れることはどれか。",
+answers:["周囲の人は彼を応援していた","周囲の人は彼の考えを疑っていた","周囲の人は無関心だった","周囲の人は研究に参加した"],
+correct:1
+},
+{
+quote:"He aimed the camera at the earth.",
+question:"13. 『aimed the camera at the earth』の意味として適切なものはどれか。",
+answers:["カメラを地球に向けた","地球を破壊した","カメラを捨てた","地球を離れた"],
+correct:0
+},
+{
+quote:"The balloon burst at a high altitude.",
+question:"14. 風船はいつ破裂したか。",
+answers:["地上にいる時","高高度に達した時","海の中に入った時","夜になった時"],
+correct:1
+},
+{
+quote:"The earth looked beautiful from space.",
+question:"15. この文から読み取れる岩谷さんの気持ちはどれか。",
+answers:["感動","怒り","退屈","恐怖"],
+correct:0
+}
+);
+
+const additionalQuestions = [
+"16. この文から分かることとして最も適切なものはどれか。",
+"17. 岩谷さんが挑戦を続けた理由として最も適切なものはどれか。",
+"18. 『advanced technology』が必要なかったことの意味として最も適切なものはどれか。",
+"19. 本文の内容として正しいものはどれか。",
+"20. 『pure delight』に最も近い意味はどれか。",
+"21. 岩谷さんは失敗後に何をしたか。",
+"22. パラシュートの役割として最も適切なものはどれか。",
+"23. 『continuous rethinking』が必要な理由はどれか。",
+"24. 本文から分かる岩谷さんの性格はどれか。",
+"25. 『homemade space camera』の特徴として適切なものはどれか。",
+"26. 本文の主題として最も適切なものはどれか。",
+"27. 『He was amazed』とあるが、なぜか。",
+"28. 『new discoveries were made』とはどういうことか。",
+"29. 『motivated by this experience』の意味として適切なものはどれか。",
+"30. この文章で筆者が伝えたい教訓はどれか。",
+"31. 岩谷さんが工夫した点として適切なものはどれか。",
+"32. 本文中の『launch』の意味として適切なものはどれか。",
+"33. 『The earth shines in the sun.』から分かることはどれか。",
+"34. 『blurry pictures』になった原因として適切なものはどれか。",
+"35. 本文から読み取れる宇宙写真撮影の難しさはどれか。",
+"36. 『give up』しないことが重要な理由はどれか。",
+"37. 本文で繰り返し述べられていることはどれか。",
+"38. 岩谷さんは何によってやる気を得たか。",
+"39. 『endeavors are likely to continue』の意味として適切なものはどれか。",
+"40. 本文から分かることとして最も適切なものはどれか。",
+"41. 『large scale』が意味するものはどれか。",
+"42. 筆者は発明についてどのように考えているか。",
+"43. 岩谷さんの成功の要因として適切なものはどれか。",
+"44. 『Using things around him』とはどういう意味か。",
+"45. 本文全体を通して最も強調されていることはどれか。",
+"46. この文章のタイトルとして最も適切なものはどれか。",
+"47. 本文から読み取れる『challenge』の意味はどれか。",
+"48. 岩谷さんはなぜデータを集めたのか。",
+"49. 『dreams are achievable』が表す考えはどれか。",
+"50. 本文を通して最も適切な感想はどれか。"
+];
+
+for(let i=0;i<additionalQuestions.length;i++){
 quizData.push({
 quote:"Success requires continuous rethinking.",
-question:`${i}. 『continuous rethinking』とはどういう意味か。`,
+question:additionalQuestions[i],
 answers:[
-"継続的に考え直すこと",
-"何も考えないこと",
-"一度で成功すること",
-"他人に任せること"
+"挑戦と工夫を続けることの大切さ",
+"夢は実現できないということ",
+"失敗したら諦めるべきということ",
+"特別な才能だけが重要だということ"
 ],
 correct:0
 });
+}
+
 }
 
 const quiz = document.getElementById("quiz");
@@ -318,3 +388,15 @@ document.getElementById("score").innerHTML = `あなたの点数は ${score} / 5
 
 </body>
 </html>
+```
+
+この形式なら、定期テストっぽく「本文の一文を引用 → 内容理解を問う」問題になる。特に：
+
+* 指示語の内容
+* 筆者の気持ち
+* 文の意味
+* なぜそう言えるか
+* 人物像
+* 内容一致
+
+みたいな高校英語でよく出る形式を中心にしてある。
