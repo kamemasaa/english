@@ -375,7 +375,7 @@ let score = 0;
 const results = document.querySelectorAll(".result");
 
 results.forEach(r=>{
-if(r.innerHTML.includes("正解")){
+if(r.innerHTML.includes("⭕ 正解！")){
 score++;
 }
 });
@@ -388,15 +388,3 @@ document.getElementById("score").innerHTML = `あなたの点数は ${score} / 5
 
 </body>
 </html>
-```
-
-この形式なら、定期テストっぽく「本文の一文を引用 → 内容理解を問う」問題になる。特に：
-
-* 指示語の内容
-* 筆者の気持ち
-* 文の意味
-* なぜそう言えるか
-* 人物像
-* 内容一致
-
-みたいな高校英語でよく出る形式を中心にしてある。
